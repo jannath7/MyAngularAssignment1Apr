@@ -1,0 +1,12 @@
+<h1>My Angular Assignment</h1>
+<h2>TO DO</h2>
+<h4>Task <input type="text" [(ngModel)]="itemtask"></h4> <h4>Time <input type="time" [(ngModel)]="itemtime"></h4>
+<h4>Priority <select [(ngModel)]="currentPriority">
+ 
+  <option *ngFor="let x of Priorities">{{x}}</option>
+</select></h4>
+ <h4> Add: <input type="button" title="Add" value="Add" (click)="onClick()"></h4>
+<app-task *ngFor="let x of ds.priority;let y=index;" 
+[title]="x"
+[items]="ds.items[y]"
+(receive)="receiveMessage($event)"></app-task>
